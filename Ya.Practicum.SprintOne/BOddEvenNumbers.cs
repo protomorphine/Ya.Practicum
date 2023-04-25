@@ -1,4 +1,4 @@
-namespace Ya.Practicum.StrintOne;
+namespace Ya.Practicum.SprintOne;
 
 public static class BOddEvenNumbers
 {

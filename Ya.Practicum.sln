@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ya.Practicum.StrintOne", "Ya.Practicum.StrintOne\Ya.Practicum.StrintOne.csproj", "{351E02CC-3628-41B1-94A3-3B16EF78A08E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ya.Practicum.SprintOne", "Ya.Practicum.SprintOne\Ya.Practicum.SprintOne.csproj", "{351E02CC-3628-41B1-94A3-3B16EF78A08E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
