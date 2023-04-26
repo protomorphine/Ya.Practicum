@@ -40,20 +40,22 @@ public static class AMonitoring
                 .ToList());
         }
 
-        // Создаем пустую матрицу n x m
-        var transposed = new List<int[]>();
-        for (var i = 0; i < m; i++)
-            transposed.Add(new int[n]);
-
+        var transposed = CreateEmptyMatrix(m, n);
 
         for (var i = 0; i < matrix.Count; i++)
-        {
-            for (var j = 0; j < matrix[i].Count; j++)
-                transposed[j][i] = matrix[i][j];
-        }
+        for (var j = 0; j < matrix[i].Count; j++)
+            transposed[j][i] = matrix[i][j];
 
         using var writer = new StreamWriter(Console.OpenStandardOutput());
         foreach (var row in transposed)
             writer.WriteLine(string.Join(" ", row));
+    }
+
+    private static List<int[]> CreateEmptyMatrix(int n, int m)
+    {
+        var matrix = new List<int[]>();
+        for (var i = 0; i < n; i++)
+            matrix.Add(new int[m]);
+        return matrix;
     }
 }
