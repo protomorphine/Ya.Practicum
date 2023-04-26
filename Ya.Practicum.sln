@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ya.Practicum.SprintOne", "Ya.Practicum.SprintOne\Ya.Practicum.SprintOne.csproj", "{351E02CC-3628-41B1-94A3-3B16EF78A08E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ya.Practicum.SprintTwo", "Ya.Practicum.SprintTwo\Ya.Practicum.SprintTwo.csproj", "{3D40331E-F2AA-4CD3-AA07-EE2A30EDE0AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{351E02CC-3628-41B1-94A3-3B16EF78A08E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{351E02CC-3628-41B1-94A3-3B16EF78A08E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{351E02CC-3628-41B1-94A3-3B16EF78A08E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D40331E-F2AA-4CD3-AA07-EE2A30EDE0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D40331E-F2AA-4CD3-AA07-EE2A30EDE0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D40331E-F2AA-4CD3-AA07-EE2A30EDE0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D40331E-F2AA-4CD3-AA07-EE2A30EDE0AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
