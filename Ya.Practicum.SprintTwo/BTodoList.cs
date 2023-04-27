@@ -1,4 +1,6 @@
-﻿namespace Ya.Practicum.SprintTwo;
+﻿using Ya.Practicum.SprintTwo.LinkedList.Nodes;
+
+namespace Ya.Practicum.SprintTwo;
 
 /// <summary>
 /// Васе нужно распечатать свой список дел на сегодня.
@@ -20,17 +22,5 @@ public static class BTodoList
             Console.WriteLine(head.Value);
             head = head.Next;
         }
-    }
-}
-
-public class Node<TValue>
-{
-    public TValue Value { get; }
-    public Node<TValue>? Next { get; }
-
-    public Node(TValue value, Node<TValue>? next = null)
-    {
-        Value = value;
-        Next = next;
     }
 }

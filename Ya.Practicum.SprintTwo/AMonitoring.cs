@@ -11,16 +11,12 @@
 ///
 /// Транспонированная матрица получается из исходной заменой строк на столбцы.
 ///
-/// Например, для матрицы А (сверху) транспонированной будет следующая матрица (снизу):
+/// Например, для матрицы А (слева) транспонированной будет следующая матрица (справа):
 ///
-/// 1 2 3
-/// 0 2 6
-/// 7 4 1
-/// 2 7 0
-///
-/// 1 0 7 2
-/// 2 2 4 7
-/// 3 6 1 0
+/// 1 2 3     ->      1 0 7 2
+/// 0 2 6     ->      2 2 4 7
+/// 7 4 1     ->      3 6 1 0
+/// 2 7 0     ->
 /// </summary>
 public static class AMonitoring
 {
@@ -51,11 +47,11 @@ public static class AMonitoring
             writer.WriteLine(string.Join(" ", row));
     }
 
-    private static List<int[]> CreateEmptyMatrix(int n, int m)
+    private static int[][] CreateEmptyMatrix(int n, int m)
     {
-        var matrix = new List<int[]>();
+        var matrix = new int[n][];
         for (var i = 0; i < n; i++)
-            matrix.Add(new int[m]);
+            matrix[i] = new int[m];
         return matrix;
     }
 }
