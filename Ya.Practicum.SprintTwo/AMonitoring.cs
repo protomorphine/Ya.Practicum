@@ -29,12 +29,10 @@ public static class AMonitoring
         var matrix = new List<List<int>>();
 
         for (var i = 0; i < n; i++)
-        {
             matrix.Add(reader.ReadLine()!
                 .Split(new[] {' ', '\t',}, StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse)
                 .ToList());
-        }
 
         var transposed = CreateEmptyMatrix(m, n);
 
