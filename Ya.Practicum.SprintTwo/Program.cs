@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintTwo;
 
-CIDontLikeIt.Execute();
+IFixedQueue.Execute();
