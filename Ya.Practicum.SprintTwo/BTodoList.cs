@@ -1,4 +1,4 @@
-﻿using Ya.Practicum.SprintTwo.LinkedList.Nodes;
+﻿using Ya.Practicum.SprintTwo.DataStructures.LinkedList.Nodes;
 
 namespace Ya.Practicum.SprintTwo;
 

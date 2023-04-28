@@ -1,4 +1,4 @@
-﻿namespace Ya.Practicum.SprintTwo.LinkedList.Nodes;
+﻿namespace Ya.Practicum.SprintTwo.DataStructures.LinkedList.Nodes;
 
 /// <summary>
 /// Нода односвязного списка

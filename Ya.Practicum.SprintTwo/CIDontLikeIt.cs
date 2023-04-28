@@ -1,4 +1,4 @@
-﻿using Ya.Practicum.SprintTwo.LinkedList.Nodes;
+﻿using Ya.Practicum.SprintTwo.DataStructures.LinkedList.Nodes;
 
 namespace Ya.Practicum.SprintTwo;
 
@@ -39,7 +39,10 @@ public static class CIDontLikeIt
         while (current != null)
         {
             if (i == idx - 1)
+            {
                 current.Next = current.Next?.Next;
+                break;
+            }
 
             i++;
             current = current.Next;
