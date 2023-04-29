@@ -29,13 +29,13 @@ public static class IFixedQueue
         var commandsCount = int.Parse(reader.ReadLine()!);
         var maxQueueSize = int.Parse(reader.ReadLine()!);
 
-        var queue = new CircleBufferQueue(maxQueueSize);
+        var queue = new CircleBufferQueue<int>(maxQueueSize);
 
         for (var i = 0; i < commandsCount; i++)
             ProcessCommand(queue, reader.ReadLine()!);
     }
 
-    private static void ProcessCommand(CircleBufferQueue circleBufferQueue, string command)
+    private static void ProcessCommand(CircleBufferQueue<int> circleBufferQueue, string command)
     {
         var commandAndArg = command.Split(' ');
 

@@ -16,12 +16,12 @@ public static class JLinkedQueue
         using var reader = new StreamReader(Console.OpenStandardInput());
         var commandCount = int.Parse(reader.ReadLine()!);
 
-        var queue = new LinkedQueue();
+        var queue = new LinkedQueue<int>();
         for (var i = 0; i < commandCount; i++)
             ProcessCommand(queue, reader.ReadLine()!);
     }
 
-    private static void ProcessCommand(LinkedQueue queue, string command)
+    private static void ProcessCommand(LinkedQueue<int> queue, string command)
     {
         var commandAndArg = command.Split(' ');
 

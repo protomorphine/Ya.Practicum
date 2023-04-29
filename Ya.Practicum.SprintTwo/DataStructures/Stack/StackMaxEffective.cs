@@ -5,19 +5,19 @@ namespace Ya.Practicum.SprintTwo.DataStructures.Stack;
 /// <summary>
 /// Реализация стека с операциями за О(1)
 /// </summary>
-public class StackMaxEffective
+public class StackMaxEffective<T> where T : IComparable<T>
 {
     /// <summary>
     /// Связный список значений стека.
     /// Обновляется каждый раз при добавлении (Push) и удалении (Pop) элементов.
     /// </summary>
-    private Node<int>? _last;
+    private Node<T>? _last;
 
     /// <summary>
     /// Связный список максимальных значений стека.
     /// Обновляется при добавлении (Push) и удалении (Pop) максимального значения.
     /// </summary>
-    private Node<int>? _max;
+    private Node<T>? _max;
 
     /// <summary>
     /// Добавляет значение в стек.
@@ -25,12 +25,12 @@ public class StackMaxEffective
     /// в связный список максимальных значений добавляется новый элемент
     /// </summary>
     /// <param name="value">Значение</param>
-    public void Push(int value)
+    public void Push(T value)
     {
-        if (_max == null || value >= _max.Value)
-            _max = new Node<int>(value, _max);
+        if (_max == null || value.CompareTo(_max.Value) >= 0)
+            _max = new Node<T>(value, _max);
 
-        _last = new Node<int>(value, _last);
+        _last = new Node<T>(value, _last);
     }
 
     /// <summary>
@@ -44,7 +44,7 @@ public class StackMaxEffective
         if (_last == null)
             return 1;
 
-        if (_max != null && _last.Value == _max.Value)
+        if (_max != null && _last.Value.CompareTo(_max.Value) is 0)
             _max = _max.Next;
 
         _last = _last.Next;
@@ -54,6 +54,12 @@ public class StackMaxEffective
     /// <summary>
     /// Возвращает максимальное значение из стека
     /// </summary>
+    /// <exception cref="InvalidOperationException">Возникает если в стеке нет элементов</exception>
     /// <returns>Мауксимальнео значение, хранящееся на стеке</returns>
-    public int? GetMax() => _max?.Value;
+    public T GetMax()
+    {
+        if (_max == null)
+            throw new InvalidOperationException("Stack contains no elements");
+        return _max.Value;
+    }
 }

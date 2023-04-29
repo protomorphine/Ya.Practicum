@@ -1,28 +1,28 @@
 ﻿namespace Ya.Practicum.SprintTwo.DataStructures.Stack;
 
 /// <summary>
-/// Реализация стека, использующего внутри List{int}
+/// Реализация стека, использующего внутри List{T}
 /// </summary>
-public class StackMax
+public class StackMax<T> where T : IComparable<T>
 {
     /// <summary>
     /// List для хранения значений
     /// </summary>
-    private readonly IList<int> _list = new List<int>();
+    private readonly IList<T> _list = new List<T>();
 
     /// <summary>
     /// Максимальное значение на стеке
     /// </summary>
-    private int _max = int.MinValue;
+    private T? _max;
 
     /// <summary>
     /// Добавляет значение в стек.
     /// <br /> Если добавляется число больше максимума, максимум перезаписывается
     /// </summary>
     /// <param name="value">Значение</param>
-    public void Push(int value)
+    public void Push(T value)
     {
-        if (value > _max)
+        if (value.CompareTo(_max) > 0)
             _max = value;
 
         _list.Add(value);
@@ -43,8 +43,8 @@ public class StackMax
 
         _list.RemoveAt(_list.Count - 1);
 
-        if (last == _max)
-            _max = _list.Count is not 0 ? _list.Max() : int.MinValue;
+        if (last.CompareTo(_max) is 0)
+            _max = _list.Count is not 0 ? _list.Max() : default;
 
         return 0;
     }
@@ -53,10 +53,10 @@ public class StackMax
     /// Возвращает максимальное значение из стека. Если стек пуст - возвращается null
     /// </summary>
     /// <returns>Мауксимальнео значение, хранящееся на стеке</returns>
-    public int? GetMax()
+    public T? GetMax()
     {
         if (_list.Count is 0)
-            return null;
+            throw new InvalidOperationException("Stack contains no elements");
         return _max;
     }
 }

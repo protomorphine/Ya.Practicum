@@ -15,13 +15,13 @@ public static class GStackMaxEffective
         using var reader = new StreamReader(Console.OpenStandardInput());
         var commandsCount = int.Parse(reader.ReadLine()!);
 
-        var stack = new StackMaxEffective();
+        var stack = new StackMaxEffective<int>();
 
         for (var i = 0; i < commandsCount; i++)
             ProcessCommand(stack, reader.ReadLine()!);
     }
 
-    private static void ProcessCommand(StackMaxEffective stack, string command)
+    private static void ProcessCommand(StackMaxEffective<int> stack, string command)
     {
         var commandWithArgs = command.Split(' ');
         command = commandWithArgs[0];
@@ -39,8 +39,8 @@ public static class GStackMaxEffective
                 break;
 
             case "get_max":
-                var max = stack.GetMax();
-                Console.WriteLine(max.HasValue ? max : "None");
+                try { Console.WriteLine(stack.GetMax()); }
+                catch { Console.WriteLine("None"); }
                 break;
         }
     }

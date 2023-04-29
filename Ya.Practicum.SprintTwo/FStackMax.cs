@@ -13,13 +13,13 @@ public static class FStackMax
         using var reader = new StreamReader(Console.OpenStandardInput());
         var commandsCount = int.Parse(reader.ReadLine()!);
 
-        var stack = new StackMax();
+        var stack = new StackMax<int>();
 
         for (var i = 0; i < commandsCount; i++)
             ProcessCommand(stack, reader.ReadLine()!);
     }
 
-    private static void ProcessCommand(StackMax stack, string command)
+    private static void ProcessCommand(StackMax<int> stack, string command)
     {
         var commandWithArgs = command.Split(' ');
         command = commandWithArgs[0];
@@ -37,8 +37,8 @@ public static class FStackMax
                 break;
 
             case "get_max":
-                var max = stack.GetMax();
-                Console.WriteLine(max == null ? "None" : max);
+                try { Console.WriteLine(stack.GetMax()); }
+                catch { Console.WriteLine("None"); }
                 break;
         }
     }

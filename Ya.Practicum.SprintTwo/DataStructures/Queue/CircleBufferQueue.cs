@@ -3,12 +3,12 @@
 /// <summary>
 /// Реализация LIFO очереди с кольцевым буффером
 /// </summary>
-public class CircleBufferQueue
+public class CircleBufferQueue<T> //where T : notnull
 {
     /// <summary>
     /// Массив для хранения элементов очереди.
     /// </summary>
-    private readonly int[] _queue;
+    private readonly T?[] _queue;
 
     /// <summary>
     /// Максимальный размер очереди.
@@ -35,7 +35,7 @@ public class CircleBufferQueue
     public CircleBufferQueue(int maxSize)
     {
         _maxSize = maxSize;
-        _queue = new int[maxSize];
+        _queue = new T?[maxSize];
     }
 
     /// <summary>
@@ -50,7 +50,7 @@ public class CircleBufferQueue
     /// <exception cref="InvalidOperationException">
     /// Возникает когда очереди заполнена, и не может вместить еще один элемент
     /// </exception>
-    public void Push(int x)
+    public void Push(T x)
     {
         if (_size == _maxSize)
             throw new InvalidOperationException("CircleBufferQueue is full");
@@ -67,17 +67,17 @@ public class CircleBufferQueue
     /// </summary>
     /// <returns>Первый элемент очереди.</returns>
     /// <exception cref="IndexOutOfRangeException">Возникает когда в очереди нет элементов.</exception>
-    public int Pop()
+    public T Pop()
     {
         if (_size == 0)
             throw new Exception("CircleBufferQueue contains no elements");
 
         var value = _queue[_head];
-        _queue[_head] = 0;
+        _queue[_head] = default;
         _head = (_head + 1) % _maxSize;
         _size--;
 
-        return value;
+        return value!;
     }
 
     /// <summary>
@@ -85,12 +85,12 @@ public class CircleBufferQueue
     /// </summary>
     /// <returns>Первый элемент очереди.</returns>
     /// <exception cref="IndexOutOfRangeException">Возникает когда в очереди нет элементов.</exception>
-    public int Peek()
+    public T Peek()
     {
         if (_size == 0)
             throw new Exception("CircleBufferQueue is empty");
 
-        return _queue[_head];
+        return _queue[_head]!;
     }
 
     /// <summary>

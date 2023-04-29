@@ -5,17 +5,17 @@ namespace Ya.Practicum.SprintTwo.DataStructures.Queue;
 /// <summary>
 /// Реализация очереди через односвязный список
 /// </summary>
-public class LinkedQueue
+public class LinkedQueue<T>
 {
     /// <summary>
     /// Голова односвязного списка.
     /// </summary>
-    private Node<int>? _head;
+    private Node<T>? _head;
 
     /// <summary>
     /// Последний элемент списка.
     /// </summary>
-    private Node<int>? _last;
+    private Node<T>? _last;
 
     /// <summary>
     /// Размер очереди.
@@ -27,7 +27,7 @@ public class LinkedQueue
     /// </summary>
     /// <returns>Первый элемент очереди.</returns>
     /// <exception cref="InvalidOperationException">Возникает когда очередь пуста</exception>
-    public int Get()
+    public T Get()
     {
         if (_head is null)
             throw new InvalidOperationException("Queue is empty");
@@ -42,9 +42,9 @@ public class LinkedQueue
     /// Добавляет элемент в конец очереди.
     /// </summary>
     /// <param name="value">Элемент.</param>
-    public void Put(int value)
+    public void Put(T value)
     {
-        var node = new Node<int>(value);
+        var node = new Node<T>(value);
         if (_head is null)
         {
             _head = node;
