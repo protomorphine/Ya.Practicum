@@ -1,7 +1,10 @@
-﻿using System.Net;
+﻿namespace Ya.Practicum.SprintOne;
 
-namespace Ya.Practicum.SprintOne;
-
+/// <summary>
+/// Помогите Васе понять, будет ли фраза палиндромом.
+/// Учитываются только буквы и цифры, заглавные и строчные буквы считаются одинаковыми.
+/// <br />Решение должно работать за O(N), где N — длина строки на входе.
+/// </summary>
 public static class FPalindrome
 {
     public static void Execute()
@@ -12,22 +15,21 @@ public static class FPalindrome
 
         var lp = 0;
         var rp = text.Length - 1;
-        var res = "True";
+        var isPalindrome = true;
         while (lp != text.Length / 2)
         {
             if (text[lp] == text[rp])
             {
-                res = "True";
                 lp++;
                 rp--;
                 continue;
             }
 
-            res = "False";
+            isPalindrome = false;
             break;
         }
 
         using var writer = new StreamWriter(Console.OpenStandardOutput());
-        writer.WriteLine(res);
+        writer.WriteLine(isPalindrome);
     }
 }
