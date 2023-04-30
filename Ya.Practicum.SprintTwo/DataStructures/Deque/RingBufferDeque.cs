@@ -1,8 +1,6 @@
 ﻿namespace Ya.Practicum.SprintTwo.DataStructures.Deque;
 
-/// <summary>
-/// Реализация дека через кольцевой буффер
-/// </summary>
+/// <summary>Реализация дека через кольцевой буффер</summary>
 public class RingBufferDeque<T>
 {
     /// <summary>Массив для хранения элементов дека.</summary>
@@ -23,7 +21,7 @@ public class RingBufferDeque<T>
     /// <summary>
     /// Создает новый экземпляр класса <see cref="RingBufferDeque{T}"/>.
     /// </summary>
-    /// <param name="maxSize">Максиальный размер дека.</param>
+    /// <param name="maxSize">Максимальный размер дека.</param>
     public RingBufferDeque(int maxSize)
     {
         _maxSize = maxSize;
