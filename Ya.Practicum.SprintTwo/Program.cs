@@ -1,3 +1,4 @@
 ﻿using Ya.Practicum.SprintTwo;
+using Ya.Practicum.SprintTwo.Finals;
 
-GStackMaxEffective.Execute();
+ADeque.Execute();
