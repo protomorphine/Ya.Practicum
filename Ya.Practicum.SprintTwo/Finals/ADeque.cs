@@ -1,4 +1,5 @@
-﻿using Ya.Practicum.SprintTwo.DataStructures.Deque;
+﻿using System.Runtime.InteropServices.ComTypes;
+using Ya.Practicum.SprintTwo.DataStructures.Deque;
 
 namespace Ya.Practicum.SprintTwo.Finals;
 
@@ -21,7 +22,7 @@ public static class ADeque
             ProcessCommand(dequeue, reader.ReadLine()!);
     }
 
-    private static void ProcessCommand(RingBufferDeque<int> dequeue, string command)
+    private static void ProcessCommand(RingBufferDeque<int> deque, string command)
     {
         var commandAndArg = command.Split(' ');
         try
@@ -31,17 +32,17 @@ public static class ADeque
             {
                 case "push_back":
                     arg = commandAndArg[1];
-                    dequeue.PushBack(int.Parse(arg));
+                    deque.PushBack(int.Parse(arg));
                     break;
                 case "push_front":
                     arg = commandAndArg[1];
-                    dequeue.PushFront(int.Parse(arg));
+                    deque.PushFront(int.Parse(arg));
                     break;
                 case "pop_back":
-                    Console.WriteLine(dequeue.PopBack());
+                    Console.WriteLine(deque.PopBack());
                     break;
                 case "pop_front":
-                    Console.WriteLine(dequeue.PopFront());
+                    Console.WriteLine(deque.PopFront());
                     break;
             }
         }
