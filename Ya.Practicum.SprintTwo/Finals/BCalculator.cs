@@ -1,4 +1,6 @@
-﻿namespace Ya.Practicum.SprintTwo.Finals;
+﻿using Ya.Practicum.SprintTwo.DataStructures.Stack;
+
+namespace Ya.Practicum.SprintTwo.Finals;
 
 /// <summary>
 /// Задание связано с обратной польской нотацией.
@@ -18,10 +20,11 @@
 ///     10 2 4 * -<br />
 /// означает 10 - 2 * 4 и равно 2<br />
 /// ---------------------------------------------------------------------<br />
-/// https://contest.yandex.ru/contest/22781/run-report/86800214/
+/// https://contest.yandex.ru/contest/22781/run-report/86808815/
 /// ---------------------------------------------------------------------<br />
 /// <br /><b> -- ПРИНЦИП РАБОТЫ -- </b><br />
 /// Для решения задачи была исползована структура Стек (LIFO-очередь).
+/// Реализация стека была взята из https://contest.yandex.ru/contest/22779/run-report/86640949/ и доработана.
 /// Стек работает следующим образом:
 /// При добавлении элемента, он помещается на "верх" стека (операция Push(value)).
 /// Получение данных происходит операцией Pop(). В результате возвращается значение с вершины стека,
@@ -82,7 +85,9 @@ public static class BCalculator
     {
         using var reader = new StreamReader(Console.OpenStandardInput());
         var expression = reader.ReadLine()!.Split(' ').ToList();
-        var stack = new Stack<int>();
+
+        // Используется собственная реализация вместо встроенной.
+        var stack = new LinkedListStack<int>();
 
         foreach (var element in expression)
         {
@@ -94,11 +99,17 @@ public static class BCalculator
 
             var right = stack.Pop();
             var left = stack.Pop();
-            stack.Push(ApplyOperator(left, right, element));
+
+            // Добавил обработку исключений при вычислении значения арифметического выражения.
+            try { stack.Push(ApplyOperator(left, right, element)); }
+            catch (Exception e) { Console.WriteLine(e.Message); }
         }
 
         using var writer = new StreamWriter(Console.OpenStandardOutput());
-        writer.WriteLine(stack.Pop());
+        if (stack.TryPop(out var calculated))
+            writer.WriteLine(calculated);
+        else
+            writer.WriteLine("Could not pop value from stack");
     }
 
     private static bool IsOperator(string s) => new[] {"+", "-", "*", "/"}.Contains(s);
@@ -110,6 +121,7 @@ public static class BCalculator
             "-" => left - right,
             "*" => left * right,
             // ReSharper disable once PossibleLossOfFraction
+            // Добавил обработку исключений в основной цикл программы.
             "/" => (int) Math.Floor((float)left / right),
             _ => throw new ArgumentException("Could not parse operator", nameof(op))
         };
