@@ -6,6 +6,7 @@
 |--------|--------|------------------|
 | 1 | [Введение в алгоритмы](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintOne) | 12 (+2) |
 | 2 | [Основные структуры данных](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintTwo) | 12 (+2) |
+| 3 | [Рекурсия и сортировки](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintThree) | 16 |
 
 ## Формат
  - Каждая задача представлена в отдельном файле, за исключением структур данных.
