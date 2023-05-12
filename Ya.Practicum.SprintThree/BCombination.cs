@@ -50,20 +50,21 @@ public static class BCombination
     /// </summary>
     /// <param name="number">Номер.</param>
     /// <param name="printAction">Делегат печати.</param>
-    /// <param name="prefix">Промежуточная комбинация. (Необходим для рекурсивного выполнения)</param>
-    /// <param name="round">Раунд печати. (Необходим для рекурсивного выполнения)</param>
-    private static void PrintCombinationInternal(int[] number, Action<string> printAction, string prefix = "", int round = 0)
+    /// <param name="prefix">Промежуточная комбинация.</param>
+    private static void PrintCombinationInternal(int[] number, Action<string> printAction, string prefix = "")
     {
+        if (number.Any(n => n is > 9 or < 2))
+            throw new ArgumentOutOfRangeException(nameof(number), "All source array elements must be in range [2, 9]");
+        
         if (!number.Any())
         {
             printAction.Invoke(prefix + " ");
             return;
         }
         
-        var mapEntry = Map[number.First()];
-        round += 1;
+        var mapEntry = Map[number[0]];
 
-        foreach (var c in mapEntry) 
-            PrintCombinationInternal(number[round..], printAction, prefix + c);
+        foreach (var c in mapEntry)
+            PrintCombinationInternal(number[1..], printAction, prefix + c);
     }
 }

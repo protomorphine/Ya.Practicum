@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintThree;
 
-BCombination.Execute();
+JBubble.Execute();
