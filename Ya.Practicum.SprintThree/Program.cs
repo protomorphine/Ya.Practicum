@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintThree;
 
-JBubble.Execute();
+GWardrobe.Execute();
