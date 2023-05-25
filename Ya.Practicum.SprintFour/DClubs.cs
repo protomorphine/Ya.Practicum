@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Ya.Practicum.SprintFour;
+﻿namespace Ya.Practicum.SprintFour;
 
 /// <summary>
 /// В компании, где работает Тимофей, заботятся о досуге сотрудников и устраивают различные кружки по интересам.
