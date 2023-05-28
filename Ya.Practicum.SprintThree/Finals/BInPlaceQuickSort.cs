@@ -24,7 +24,7 @@
 /// дополнительной памяти для промежуточных данных (такая модификация быстрой сортировки называется "in-place").
 ///
 /// ===================================================================================================================
-/// https://contest.yandex.ru/contest/23815/run-report/87564699/
+/// https://contest.yandex.ru/contest/23815/run-report/87631943/
 /// ===================================================================================================================
 /// -- ПРИНЦИП РАБОТЫ --
 /// Для реализации данной задачи портебовалась реализация дополнительнйо структуры данных, представляющую
@@ -77,18 +77,39 @@ public static class BInPlaceQuickSort
     public static void Execute()
     {
         using var reader = new StreamReader(Console.OpenStandardInput());
-        var participants = new List<Participant>();
-        var count = int.Parse(reader.ReadLine()!);
-        for (var i = 0; i < count; i++)
-        {
-            var data = reader.ReadLine()!.Split(' ');
-            participants.Add(new Participant(data[0], int.Parse(data[1]), int.Parse(data[2])));
-        }
+        var count = ReadInt(reader);
+        var participants = ReadList(reader, count, args =>
+            new Participant(args[0], int.Parse(args[1]), int.Parse(args[2])));
 
         QuickSort(participants, 0, count - 1);
 
         foreach (var login in participants.Select(p => p.Login))
             Console.WriteLine(login);
+    }
+
+    /// <summary>
+    /// Читает число (int) из ридера.
+    /// </summary>
+    /// <param name="reader">Ридер данных.</param>
+    /// <returns>Число.</returns>
+    private static int ReadInt(TextReader reader) => int.Parse(reader.ReadLine()!);
+
+    /// <summary>
+    /// Читает последовательность из ридера.
+    /// </summary>
+    /// <param name="reader">Ридер.</param>
+    /// <param name="count">Размер последовательности.</param>
+    /// <param name="factory">Делегат создания экземпляра элемента последовательсноти из сичтанной ридером строки.</param>
+    /// <typeparam name="T">Тип элемента последовательности.</typeparam>
+    /// <returns>Последовательность элементов.</returns>
+    private static List<T> ReadList<T>(TextReader reader, int count, Func<string[], T> factory)
+    {
+        var list = new List<T>();
+
+        for (var i = 0; i < count; i++)
+            list.Add(factory.Invoke(reader.ReadLine()!.Split(' ')));
+
+        return list;
     }
 
     /// <summary>

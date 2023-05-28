@@ -18,7 +18,7 @@
 /// "Сломанная" в данном случае означает что до некого индекса значения возрастают, затем упорядочивание "ломается"
 /// и элементы снова начинают возрастать. Например последовательность [5, 6, 7, 1, 2, 3, 4] имеет "перелом" на элементе 7.
 ///
-/// В данной задаче для поиска "перелома" используется функция FindPivot, которая с помощью рекурсивного бинарного
+/// В данной задаче для поиска "перелома" используется функция FindPivotIndex, которая с помощью рекурсивного бинарного
 /// поиска находит индекс "перелома" последовательности.
 ///
 /// Зная индекс перелома можно разделить последовательность на две, при этом каждая из подпоследовательнсотей
@@ -33,7 +33,7 @@
 ///
 /// -- ВРЕМЕННАЯ СЛОЖНОСТЬ --
 ///
-/// 1) FindPivot - осущесталяет бинарный поиск "перелома" последовательности. Выполняется за O(logN).
+/// 1) FindPivotIndex - осущесталяет бинарный поиск "перелома" последовательности. Выполняется за O(logN).
 /// 2) BinarySearch - осуществляет бинарный поиск по последовательности. Выполянется за O(logN).
 ///
 /// Следовательно, в наихудщем случае будут выполнены два бинарных поиска, в связи с этим алгоритм выполнится за o(logN).
@@ -61,7 +61,9 @@ public static class ABrokenSearch
     // Вызывается из вне
     public static int BrokenSearch(List<int> array, int el)
     {
-        var pivot = FindPivot(array, 0, array.Count - 1);
+        // ReSharper disable once SuggestVarOrType_BuiltInTypes
+        // Вернули с ревью с комментарием "В данном случае было бы лучше явно указать тип данных, так как он не очевиден из правой части выражения"
+        int pivot = FindPivotIndex(array, 0, array.Count - 1);
 
         if (array[pivot] == el)
             return pivot;
@@ -107,7 +109,7 @@ public static class ABrokenSearch
     /// <returns>Индекс "перелома" списка.</returns>
     // ReSharper disable once SuggestBaseTypeForParameter
     // У Яндекса "отличный" тренажер, который не может найти IReadOnlyList<T> в System.Collections.Generic
-    private static int FindPivot(List<int> array, int left, int right)
+    private static int FindPivotIndex(List<int> array, int left, int right)
     {
         if (left == right)
             return left;
@@ -115,7 +117,7 @@ public static class ABrokenSearch
         var mid = (left + right) / 2;
 
         return array[mid] >= array[left]
-            ? FindPivot(array, mid + 1, right)
-            : FindPivot(array, left, mid);
+            ? FindPivotIndex(array, mid + 1, right)
+            : FindPivotIndex(array, left, mid);
     }
 }
