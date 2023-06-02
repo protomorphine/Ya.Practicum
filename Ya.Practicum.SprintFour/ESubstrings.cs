@@ -15,6 +15,29 @@ public static class ESubstrings
 
     private static int GetMaximumSubstringLength(string str)
     {
-        return 0;
+
+        if (str.Length < 2)
+            return str.Length;
+        var map = new Dictionary<char, int>();
+
+        var left = 0;
+        var right = 1;
+        var max = 0;
+        
+        map.Add(str[left], 0);
+
+        while (right < str.Length)
+        {
+            var current = str[right];
+
+            if (map.Remove(current, out var index)) 
+                left = Math.Max(left, index + 1);
+
+            max = Math.Max(max, right - left + 1);
+            map.Add(current, right);
+            right++;
+        }
+
+        return max;
     }
 }

@@ -21,18 +21,22 @@ public static class GCompetition
         var n = int.Parse(reader.ReadLine()!);
         var rounds = reader.ReadLine()!.Split(' ').Select(c => c == "0" ? -1 : 1).ToList();
 
-        for (var i = 1; i < rounds.Count; i++)
+        var map = new Dictionary<int, List<int>>
         {
-            var value = rounds[i];
-            rounds[i] = rounds[i - 1] + value;
-        }
-        
-        if (rounds.Count is 2 && rounds[1] is 0)
-            Console.WriteLine("2");
-        else
+            { 0, new List<int> {0} }
+        };
+
+        var lastPrefix = 0;
+        for (var i = 0; i < n; i++)
         {
-            var lengths = rounds.Distinct().Select(val => rounds.LastIndexOf(val) - rounds.IndexOf(val)).ToList();
-            Console.WriteLine(lengths.Max());
+            lastPrefix += rounds[i];
+            
+            if (!map.ContainsKey(lastPrefix))
+                map.Add(lastPrefix, new List<int>());
+            
+            map[lastPrefix].Add(i + 1);
         }
+
+        Console.WriteLine(map.Values.Select(value => value[^1] - value[0]).Prepend(0).Max());
     }
 }
