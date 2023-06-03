@@ -1,3 +1,4 @@
 ﻿using Ya.Practicum.SprintFour;
+using Ya.Practicum.SprintFour.Finals;
 
-GCompetition.Execute();
+BHashTable.Execute();
