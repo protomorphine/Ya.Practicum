@@ -20,7 +20,7 @@ public static class BBreakMe
 
         while (APolynomialHashes.Hash(str1, @base, mod) != APolynomialHashes.Hash(str2, @base, mod))
             str2 = CreateRandomString(length, allowed);
-        
+
         Console.WriteLine(str1);
         Console.WriteLine(str2);
     }
@@ -28,7 +28,7 @@ public static class BBreakMe
     private static string CreateRandomString(int length, string allowed) =>
         string.Create(length, allowed, (span, s) =>
         {
-            for (var i = 0; i < length; i++) 
+            for (var i = 0; i < length; i++)
                 span[i] = s[Random.Shared.Next(allowed.Length)];
         });
 }
