@@ -2,4 +2,4 @@
 
 using Ya.Practicum.SprintFive;
 
-ALights.Execute();
+KPrintRange.Execute();
