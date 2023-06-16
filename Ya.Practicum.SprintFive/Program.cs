@@ -2,4 +2,4 @@
 
 using Ya.Practicum.SprintFive;
 
-KPrintRange.Execute();
+JInsertNode.Execute();
