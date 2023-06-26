@@ -7,4 +7,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Ya.Practicum.Common\Ya.Practicum.Common.csproj" />
+    </ItemGroup>
+
 </Project>

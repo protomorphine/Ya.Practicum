@@ -1,4 +1,4 @@
-﻿namespace Ya.Practicum.SprintThree.Finals;
+﻿namespace Ya.Practicum.Common;
 
 /// <summary>
 /// Представление участника олимпиады.
@@ -87,7 +87,7 @@ public class Participant : IComparable<Participant>
     /// </summary>
     /// <param name="left">Экземпляр "слева".</param>
     /// <param name="right">Экземпляр "справа".</param>
-    public static bool operator >= (Participant left, Participant right) => left.CompareTo(right) > 0;
+    public static bool operator >= (Participant left, Participant right) => left.CompareTo(right) >= 0;
 
     /// <summary>
     /// Оператор меньше.
@@ -101,7 +101,7 @@ public class Participant : IComparable<Participant>
     /// </summary>
     /// <param name="left">Экземпляр "слева".</param>
     /// <param name="right">Экземпляр "справа".</param>
-    public static bool operator <= (Participant left, Participant right) => left.CompareTo(right) < 0;
+    public static bool operator <= (Participant left, Participant right) => left.CompareTo(right) <= 0;
     
     /// <summary>
     /// Оператор не равенства.

@@ -1,4 +1,6 @@
-﻿namespace Ya.Practicum.SprintThree.Finals;
+﻿using Ya.Practicum.Common;
+
+namespace Ya.Practicum.SprintThree.Finals;
 
 /// <summary>
 /// Тимофей решил организовать соревнование по спортивному программированию,
