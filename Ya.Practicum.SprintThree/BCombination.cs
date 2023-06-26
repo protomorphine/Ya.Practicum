@@ -53,7 +53,7 @@ public static class BCombination
     /// <param name="prefix">Промежуточная комбинация.</param>
     private static void PrintCombinationInternal(int[] number, Action<string> printAction, string prefix = "")
     {
-        if (number.Any(n => n is > 9 or < 2))
+        if (Array.Exists(number, n => n is > 9 or < 2))
             throw new ArgumentOutOfRangeException(nameof(number), "All source array elements must be in range [2, 9]");
         
         if (!number.Any())

@@ -18,6 +18,6 @@ public static class BOddEvenNumbers
             .ToList();
 
         using var writer = new StreamWriter(Console.OpenStandardOutput());
-        writer.WriteLine(line.All(i => i is 0) || line.All(i => i is 1) ? "WIN" : "FAIL");
+        writer.WriteLine(line.TrueForAll(i => i is 0) || line.TrueForAll(i => i is 1) ? "WIN" : "FAIL");
     }
 }

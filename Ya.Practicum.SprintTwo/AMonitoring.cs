@@ -37,19 +37,21 @@ public static class AMonitoring
         var transposed = CreateEmptyMatrix(m, n);
 
         for (var i = 0; i < matrix.Count; i++)
-        for (var j = 0; j < matrix[i].Count; j++)
-            transposed[j][i] = matrix[i][j];
+        {
+            for (var j = 0; j < matrix[i].Count; j++)
+                transposed[j][i] = matrix[i][j];
+        }
 
         using var writer = new StreamWriter(Console.OpenStandardOutput());
         foreach (var row in transposed)
             writer.WriteLine(string.Join(" ", row));
     }
 
-    private static int[][] CreateEmptyMatrix(int n, int m)
+    private static int[][] CreateEmptyMatrix(int rows, int columns)
     {
-        var matrix = new int[n][];
-        for (var i = 0; i < n; i++)
-            matrix[i] = new int[m];
+        var matrix = new int[rows][];
+        for (var i = 0; i < rows; i++)
+            matrix[i] = new int[columns];
         return matrix;
     }
 }

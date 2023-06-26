@@ -23,7 +23,7 @@ public static class BGoldenHand
         var map = new Dictionary<int, int>();
         for (var i = 0; i < rowsCount; i++)
         {
-            foreach (var c in reader.ReadLine()!.ToCharArray())
+            foreach (var c in reader.ReadLine()!)
             {
                 if (!int.TryParse(c.ToString(), out var parsed)) continue;
                 if (map.TryGetValue(parsed, out _))
