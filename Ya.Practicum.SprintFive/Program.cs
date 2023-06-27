@@ -3,4 +3,4 @@
 using Ya.Practicum.SprintFive;
 using Ya.Practicum.SprintFive.Finals;
 
-AHeapSort.Execute();
+BRemoveTreeNode.Execute();
