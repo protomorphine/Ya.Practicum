@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintSix;
 
-BEdgesToMatrix.Execute();
+CDfs.Execute();
