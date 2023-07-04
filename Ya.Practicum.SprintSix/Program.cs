@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintSix;
 
-CDfs.Execute();
+HTimeToGoOut.Execute();
