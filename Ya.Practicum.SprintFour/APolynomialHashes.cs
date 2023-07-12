@@ -17,6 +17,6 @@ public static class APolynomialHashes
         Console.WriteLine(Hash(str, a, m));
     }
 
-    public static long Hash(string str, int a, int m) => 
+    public static long Hash(string str, int a, int m) =>
         str.Aggregate<char, long>(0, (current, c) => (current * a % m + c) % m);
 }

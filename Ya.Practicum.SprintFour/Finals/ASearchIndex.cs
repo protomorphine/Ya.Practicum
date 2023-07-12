@@ -141,7 +141,7 @@ public static class ASearchIndex
         {
             if (!globalIndex.TryGetValue(word, out var globalIndexEntry))
                 continue;
-            
+
             foreach (var (documentNumber, wordEntries) in globalIndexEntry)
             {
                 if (relevanceIndex.ContainsKey(documentNumber))
@@ -149,7 +149,7 @@ public static class ASearchIndex
                     relevanceIndex[documentNumber] += wordEntries;
                     continue;
                 }
-            
+
                 relevanceIndex.Add(documentNumber, wordEntries);
             }
         }

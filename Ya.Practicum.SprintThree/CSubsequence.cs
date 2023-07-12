@@ -28,7 +28,7 @@ public static class CSubsequence
         {
             if (firstPointer > a.Length - 1 || secondPointer > b.Length - 1)
                 return false;
-            
+
             if (a[firstPointer] == b[secondPointer])
             {
                 neededLength--;
@@ -38,11 +38,11 @@ public static class CSubsequence
             }
 
             secondPointer++;
-            
+
             if (secondPointer == b.Length - 1)
                 break;
         }
-        
+
         return neededLength == 0;
     }
 }

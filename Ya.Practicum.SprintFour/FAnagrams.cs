@@ -20,7 +20,7 @@ public static class FAnagrams
         {
             var word = words[i];
             var hash = GetHash(word);
-            
+
             if (res.TryGetValue(hash, out var value))
                 value.Add(i);
             else
@@ -30,7 +30,7 @@ public static class FAnagrams
             }
         }
 
-        foreach (var val in res.Values) 
+        foreach (var val in res.Values)
             writer.WriteLine(string.Join(" ", val));
     }
 

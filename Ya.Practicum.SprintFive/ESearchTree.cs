@@ -30,7 +30,7 @@ public static class ESearchTree
         Console.WriteLine(Solve(node5));
     }
 
-    private static bool Solve(Node root) => 
+    private static bool Solve(Node root) =>
         IsBinarySearchTree(root, int.MinValue, int.MaxValue);
 
     private static bool IsBinarySearchTree(Node? current, int min, int max)

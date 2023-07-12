@@ -13,7 +13,7 @@ public static class BEdgesToMatrix
         using var reader = new StreamReader(Console.OpenStandardInput());
         var counts = reader.ReadLine()!.Split(' ').Select(int.Parse).ToList();
         var (n, m) = (counts[0], counts[1]);
-        
+
         var edges = new List<KeyValuePair<int, int>>();
         for (var i = 0; i < m; i++)
         {
@@ -23,13 +23,13 @@ public static class BEdgesToMatrix
 
         var result = new int[n, n];
 
-        foreach (var edge in edges) 
+        foreach (var edge in edges)
             result[edge.Key - 1, edge.Value - 1] = 1;
 
         for (var i = 0; i < n; i++)
         {
             var row = new StringBuilder();
-            for (var j = 0; j < n; j++) 
+            for (var j = 0; j < n; j++)
                 row.Append($"{result[i, j]} ");
 
             Console.WriteLine(row);

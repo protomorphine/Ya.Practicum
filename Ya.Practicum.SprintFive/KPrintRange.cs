@@ -32,14 +32,14 @@ public static class KPrintRange
 
     private static void PrintRange(Node root, int left, int right, TextWriter writer)
     {
-        if (root.Value >= left && root.Left != null) 
+        if (root.Value >= left && root.Left != null)
             PrintRange(root.Left, left, right, writer);
         
         if (root.Value <= right && root.Value >= left)
             writer.WriteLine(root.Value);
         
-        if (root.Value <= right && root.Right != null) 
+        if (root.Value <= right && root.Right != null)
             PrintRange(root.Right, left, right, writer);
     }
-    
+
 }

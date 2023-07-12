@@ -11,12 +11,12 @@ public static class CDfs
         using var reader = new StreamReader(Console.OpenStandardInput());
         var counts = reader.ReadLine()!.Split(' ').Select(int.Parse).ToList();
         var (n, m) = (counts[0], counts[1]);
-        
+
         var adjustmentList = ReadGraph(n, m, reader);
 
         var startVertex = int.Parse(reader.ReadLine()!);
         var colored = Enumerable.Range(0, n + 1).Select(_ => Colors.White).ToList();
-        
+
         Dfs(colored, startVertex, adjustmentList);
     }
 
@@ -40,12 +40,12 @@ public static class CDfs
     {
         if (colors[vertex] is not Colors.Gray)
             Console.Write(vertex + " ");
-        
+
         colors[vertex] = Colors.Gray;
 
         foreach (var w in edges[vertex]
                      .Where(v => colors[v] is not Colors.Gray)
-                     .OrderBy(it => it)) 
+                     .OrderBy(it => it))
             Dfs(colors, w, edges);
     }
 }

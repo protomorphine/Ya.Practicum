@@ -15,7 +15,7 @@ public static class DCookies
         var greeds = reader.ReadLine()!.Split(' ').Select(int.Parse).ToArray();
         var cookies = int.Parse(reader.ReadLine()!);
         var cookieSizes = reader.ReadLine()!.Split(' ').Select(int.Parse).ToArray();
-        
+
         Array.Sort(greeds);
         Array.Sort(cookieSizes);
 
@@ -26,12 +26,12 @@ public static class DCookies
             {
                 res++;
                 kid++;
-                
+
             }
 
             cookie++;
         }
-        
+
         Console.WriteLine(res);
     }
 }

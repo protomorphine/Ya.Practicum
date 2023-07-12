@@ -15,7 +15,7 @@
 /// Если же первая строка s=«abc», а вторая t=«aaa», то строки уже не будут равны,
 /// так как разные буквы первой строки соответствуют одинаковым буквам второй.
 /// </summary>
-public class HStrangeComparison
+public static class HStrangeComparison
 {
     public static void Execute()
     {
@@ -41,9 +41,9 @@ public class HStrangeComparison
 
         for (var i = 0; i < str1.Length; i++)
         {
-            if (!map.TryGetValue(str1[i], out var value)) 
+            if (!map.TryGetValue(str1[i], out var value))
                 return "NO";
-            
+
             if (value != str2[i])
                 return "NO";
         }

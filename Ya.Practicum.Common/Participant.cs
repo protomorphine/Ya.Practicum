@@ -37,7 +37,7 @@ public class Participant : IComparable<Participant>
         SolvedTasks = solvedTasks;
         Fine = fine;
     }
-    
+
     /// <inheritdoc />
     public int CompareTo(Participant? other)
     {
@@ -54,7 +54,7 @@ public class Participant : IComparable<Participant>
 
         return other.SolvedTasks.CompareTo(SolvedTasks);
     }
-    
+
     /// <inheritdoc />
     public override bool Equals(object? obj)
     {
@@ -74,14 +74,14 @@ public class Participant : IComparable<Participant>
     /// <param name="right">Экземпляр "справа".</param>
     public static bool operator == (Participant left, Participant right) =>
         left?.Equals(right) ?? ReferenceEquals(right, null);
-    
+
     /// <summary>
     /// Оператор больше.
     /// </summary>
     /// <param name="left">Экземпляр "слева".</param>
     /// <param name="right">Экземпляр "справа".</param>
     public static bool operator > (Participant left, Participant right) => left.CompareTo(right) > 0;
-    
+
     /// <summary>
     /// Оператор больше или равно.
     /// </summary>
@@ -95,14 +95,14 @@ public class Participant : IComparable<Participant>
     /// <param name="left">Экземпляр "слева".</param>
     /// <param name="right">Экземпляр "справа".</param>
     public static bool operator < (Participant left, Participant right) => left.CompareTo(right) < 0;
-    
+
     /// <summary>
     /// Оператор меньше или равно.
     /// </summary>
     /// <param name="left">Экземпляр "слева".</param>
     /// <param name="right">Экземпляр "справа".</param>
     public static bool operator <= (Participant left, Participant right) => left.CompareTo(right) <= 0;
-    
+
     /// <summary>
     /// Оператор не равенства.
     /// </summary>

@@ -9,12 +9,12 @@ public class Node
     /// Значение в узле
     /// </summary>
     public int Value { get; set; }
-    
+
     /// <summary>
     /// Левый потомок
     /// </summary>
     public Node? Left { get; set; }
-    
+
     /// <summary>
     /// Правый потомок
     /// </summary>

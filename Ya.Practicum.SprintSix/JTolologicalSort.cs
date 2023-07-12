@@ -9,15 +9,15 @@
 public static class JTolologicalSort
 {
     private static List<Colors> _colors = new();
-    
+
     public static void Execute()
     {
         using var reader = new StreamReader(Console.OpenStandardInput());
         var counts = reader.ReadLine()!.Split(' ').Select(int.Parse).ToList();
         var (n, m) = (counts[0], counts[1]);
-        
+
         var graph = ReadVertices(m, reader);
-        
+
         _colors = Enumerable.Range(0, n + 1).Select(_ => Colors.White).ToList();
         var stack = new Stack<int>();
 
@@ -26,9 +26,8 @@ public static class JTolologicalSort
             if (_colors[i] is Colors.White)
                 Dfs(i, graph, stack);
         }
-        
-        Console.WriteLine(string.Join(" ", stack));
 
+        Console.WriteLine(string.Join(" ", stack));
     }
 
     private static Dictionary<int, List<int>> ReadVertices(int verticesCount, TextReader reader)
@@ -42,17 +41,17 @@ public static class JTolologicalSort
                 graph[read[0]].Add(read[1]);
                 continue;
             }
-            
+
             graph.Add(read[0], new List<int> {read[1]});
         }
 
         return graph;
     }
 
-    private static IEnumerable<int> GetOutgoingEdges(IReadOnlyDictionary<int, List<int>> graph, int vertex) => 
+    private static IEnumerable<int> GetOutgoingEdges(IReadOnlyDictionary<int, List<int>> graph, int vertex) =>
         !graph.ContainsKey(vertex) ? Enumerable.Empty<int>() : graph[vertex];
 
-    private static void Dfs( int vertex, IReadOnlyDictionary<int, List<int>> edges, Stack<int> stack)
+    private static void Dfs(int vertex, IReadOnlyDictionary<int, List<int>> edges, Stack<int> stack)
     {
         _colors[vertex] = Colors.Gray;
 
@@ -61,7 +60,7 @@ public static class JTolologicalSort
             if (_colors[w] is Colors.White)
                 Dfs(w, edges, stack);
         }
-        
+
         stack.Push(vertex);
     }
 }

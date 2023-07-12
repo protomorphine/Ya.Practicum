@@ -9,7 +9,7 @@ public static class ESubstrings
     {
         using var reader = new StreamReader(Console.OpenStandardInput());
         var str = reader.ReadLine()!;
-        
+
         Console.WriteLine(GetMaximumSubstringLength(str));
     }
 
@@ -23,14 +23,14 @@ public static class ESubstrings
         var left = 0;
         var right = 1;
         var max = 0;
-        
+
         map.Add(str[left], 0);
 
         while (right < str.Length)
         {
             var current = str[right];
 
-            if (map.Remove(current, out var index)) 
+            if (map.Remove(current, out var index))
                 left = Math.Max(left, index + 1);
 
             max = Math.Max(max, right - left + 1);

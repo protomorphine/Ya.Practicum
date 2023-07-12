@@ -30,10 +30,10 @@ public static class GCompetition
         for (var i = 0; i < n; i++)
         {
             lastPrefix += rounds[i];
-            
+
             if (!map.ContainsKey(lastPrefix))
                 map.Add(lastPrefix, new List<int>());
-            
+
             map[lastPrefix].Add(i + 1);
         }
 

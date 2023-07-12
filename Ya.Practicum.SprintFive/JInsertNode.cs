@@ -21,11 +21,11 @@ public static class JInsertNode
         var newHead = Insert(head, 7);
         
         Console.WriteLine(newHead == head);
-        Console.WriteLine(newHead.Right?.Left?.Right != null 
-                          && newHead.Right.Left != null 
+        Console.WriteLine(newHead.Right?.Left?.Right != null
+                          && newHead.Right.Left != null
                           && newHead.Right.Left.Right.Value == 7);
     }
-    
+
     private static Node Insert(Node root, int key)
     {
         if (key < root.Value)
@@ -34,7 +34,7 @@ public static class JInsertNode
                 root.Left = new Node(key);
             else
                 Insert(root.Left, key);
-        } 
+        }
         else
         {
             if (root.Right is null)

@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintSix;
 
-EConnectivityComponents.Execute();
+GMaxDistance.Execute();

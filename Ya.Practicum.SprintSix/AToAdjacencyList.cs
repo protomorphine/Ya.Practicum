@@ -39,7 +39,7 @@ public static class AToAdjacencyList
             result.Add(new KeyValuePair<int, List<int>>(0, Enumerable.Empty<int>().ToList()));
         }
 
-        foreach (var pair in result) 
+        foreach (var pair in result)
             Console.WriteLine($"{pair.Key} {string.Join(" ", pair.Value)}");
     }
 }

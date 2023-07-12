@@ -12,11 +12,11 @@ public static class DClubs
         using var reader = new StreamReader(Console.OpenStandardInput());
         var logEntries = int.Parse(reader.ReadLine()!);
         var logs = new HashSet<string>();
-        
-        for (var i = 0; i < logEntries; i++) 
+
+        for (var i = 0; i < logEntries; i++)
             logs.Add(reader.ReadLine()!);
 
-        foreach (var log in logs) 
+        foreach (var log in logs)
             Console.WriteLine(log);
     }
 }
