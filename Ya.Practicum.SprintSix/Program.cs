@@ -1,3 +1,4 @@
 ﻿using Ya.Practicum.SprintSix;
+using Ya.Practicum.SprintSix.Finals;
 
-GMaxDistance.Execute();
+BRailways.Execute();
