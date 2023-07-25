@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ya.Practicum.Common", "Ya.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ya.Practicum.SprintSix", "Ya.Practicum.SprintSix\Ya.Practicum.SprintSix.csproj", "{714D8276-2A25-4931-A857-BF4A9AB956E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ya.Practicum.SprintSeven", "Ya.Practicum.SprintSeven\Ya.Practicum.SprintSeven.csproj", "{49D5C079-442F-4148-AE3F-2315743D878C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{714D8276-2A25-4931-A857-BF4A9AB956E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{714D8276-2A25-4931-A857-BF4A9AB956E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{714D8276-2A25-4931-A857-BF4A9AB956E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D5C079-442F-4148-AE3F-2315743D878C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D5C079-442F-4148-AE3F-2315743D878C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D5C079-442F-4148-AE3F-2315743D878C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D5C079-442F-4148-AE3F-2315743D878C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
