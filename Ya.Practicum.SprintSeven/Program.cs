@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintSeven;
 
-AExchange.Execute();
+FJumps.Execute();
