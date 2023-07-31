@@ -12,21 +12,9 @@ public static class HFlowerField
     {
         using var reader = new StreamReader(Console.OpenStandardInput());
         var bounds = reader.ReadLine()!.Split(' ').Select(int.Parse).ToList();
-        var field = new int[bounds[0] + 1][];
+        var field = ReadField(bounds[0], bounds[1], reader);
 
-        for (var i = bounds[0]; i > 0; i--)
-        {
-            var tokens = $"0{reader.ReadLine()!}";
-            field[i] = tokens.ToCharArray().Select(it => int.Parse(it.ToString())).ToArray();
-        }
-
-        field[0] = new int[bounds[1] + 1];
-
-
-        var dp = new int[bounds[0] + 1][];
-        for (var i = 0; i < dp.Length; i++) 
-            dp[i] = new int[bounds[1] + 1];
-
+        var dp = new int[bounds[0] + 1][].Select(_ => new int[bounds[1] + 1]).ToArray();
         for (var i = 1; i < field.Length; i++)
         {
             for (var j = 1; j < field[i].Length; j++) 
@@ -34,5 +22,19 @@ public static class HFlowerField
         }
         
         Console.WriteLine(dp[bounds[0]][bounds[1]]);
+    }
+
+    private static int[][] ReadField(int n, int m, TextReader reader)
+    {
+        var field = new int[n + 1][];
+
+        for (var i = n; i > 0; i--)
+        {
+            var tokens = $"0{reader.ReadLine()!}";
+            field[i] = tokens.ToCharArray().Select(it => int.Parse(it.ToString())).ToArray();
+        }
+
+        field[0] = new int[m + 1];
+        return field;
     }
 }
