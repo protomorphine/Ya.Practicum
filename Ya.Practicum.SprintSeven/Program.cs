@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintSeven;
 
-HFlowerField.Execute();
+LLepreconGold.Execute();
