@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintSeven;
 
-LLepreconGold.Execute();
+DFibonacci.Execute();
