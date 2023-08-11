@@ -9,7 +9,7 @@ namespace Ya.Practicum.SprintEight;
 /// (в частности, если ki=0, то строка вставляется в самое начало s).
 /// Помогите Рите и определите, какая строка получится после вставки в s всех подаренных Гошей строк.
 /// </summary>
-public static class BStringInsert
+public static class EStringInsert
 {
     public static void Execute()
     {
