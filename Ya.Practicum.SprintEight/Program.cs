@@ -1,3 +1,3 @@
 ﻿using Ya.Practicum.SprintEight;
 
-GShiftSearch.Execute();
+LPrefixFunction.Execute();
