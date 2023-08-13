@@ -63,7 +63,7 @@ public static class ABrokenSearch
     {
         // ReSharper disable once SuggestVarOrType_BuiltInTypes
         // Вернули с ревью с комментарием "В данном случае было бы лучше явно указать тип данных, так как он не очевиден из правой части выражения"
-        int pivot = FindPivotIndex(array, 0, array.Count - 1);
+        var pivot = FindPivotIndex(array, 0, array.Count - 1);
 
         if (array[pivot] == el)
             return pivot;
