@@ -1,3 +1,4 @@
 ﻿using Ya.Practicum.SprintEight;
+using Ya.Practicum.SprintEight.Finals;
 
-LPrefixFunction.Execute();
+BCheatSheet.Execute();
