@@ -8,7 +8,10 @@
 | 2 | [Основные структуры данных](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintTwo) | 12 (+2) |
 | 3 | [Рекурсия и сортировки](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintThree) | 9 (+2) |
 | 4 | [Хэш-функции](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintFour) | 8 (+2) |
-| 5 | [Деревья](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintFive) | 5 |
+| 5 | [Деревья](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintFive) | 7 (+2) |
+| 6 | [Графы](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintSix) | 8 (+2) |
+| 7 | [Деревья](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintFive) | 9 (+2) |
+| 8 | [Деревья](https://github.com/protomorphine/Ya.Practicum/tree/master/Ya.Practicum.SprintFive) | 6 (+2) |
 
 ## Формат
  - Каждая задача представлена в отдельном файле, за исключением структур данных.
